@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "322167248889",
+    "project_id": "recipe-f3970",
+    "storage_bucket": "recipe-f3970.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322167248889:android:c9a3a0b12e93cbbe334f28",
+        "android_client_info": {
+          "package_name": "com.example.foodRecepi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322167248889-5festet9bj3b7v4mibhenibh0567451g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.foodRecepi",
+            "certificate_hash": "b3ef3f61234acc650a6f5efa608b50042654a108"
+          }
+        },
+        {
+          "client_id": "322167248889-e1k2btv55e9kdp4krvfc2s6cc8uf087s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSDyVyriC7oBYQjCv0XUPeevJ86v-3P08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "322167248889-dhtmftgpn6d6gqrqvir0tst6m7e3le8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "322167248889-796mo840fjkj7fldeo968rd7qvrfked2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.foodRecepi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

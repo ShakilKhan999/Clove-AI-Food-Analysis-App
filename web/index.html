@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Permissions -->
+  <meta name="permissions-policy" content="camera=*, microphone=*">
+  <meta http-equiv="permissions-policy" content="interest-cohort=(), camera=(self), microphone=(self)">
+
+  <!-- iOS meta tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="recipe">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- Web Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <title>Recipe</title>
+
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = null;
+
+    // Firebase Configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAgsCX9Dk3-Ys05OZnIpnHy09jCWDATkjo",
+      authDomain: "recipe-f3970.firebaseapp.com",
+      projectId: "recipe-f3970",
+      storageBucket: "recipe-f3970.firebasestorage.app",
+      messagingSenderId: "322167248889",
+      appId: "1:322167248889:web:cb5f411a2de20967334f28",
+      measurementId: "G-KH1LM91HTQ"
+    };
+
+    // Initialize Firebase
+    function initializeFirebase() {
+      if (typeof firebase !== "undefined") {
+        firebase.initializeApp(firebaseConfig);
+        console.log("Firebase initialized successfully");
+
+        // Optional: Initialize Analytics if available
+        if (typeof firebase.analytics === "function") {
+          firebase.analytics();
+          console.log("Firebase Analytics initialized");
+        }
+      } else {
+        console.warn("Firebase SDK not loaded");
+      }
+    }
+
+    // Speech Recognition Setup
+    function setupSpeechRecognition() {
+      if (typeof SpeechRecognition === 'undefined') {
+        if (typeof webkitSpeechRecognition !== 'undefined') {
+          window.SpeechRecognition = webkitSpeechRecognition;
+        } else {
+          console.warn('Speech recognition not supported');
+        }
+      }
+
+      if (typeof SpeechSynthesisUtterance === 'undefined') {
+        if (typeof webkitSpeechSynthesisUtterance !== 'undefined') {
+          window.SpeechSynthesisUtterance = webkitSpeechSynthesisUtterance;
+        } else {
+          console.warn('Speech synthesis not supported');
+        }
+      }
+    }
+
+    // Initialize Application on Page Load
+    window.addEventListener('load', function() {
+      setupSpeechRecognition();
+      initializeFirebase();
+
+      // Initialize speech recognition if available
+      if (window.SpeechRecognition) {
+        window.speechRecognition = new SpeechRecognition();
+      }
+
+      // Load Flutter Entrypoint
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
+
+  <!-- Flutter Initialization -->
+  <script src="flutter.js" defer></script>
+</head>
+<body>
+<script>
+  // In-App WebView Setup
+  if (!window.flutter_inappwebview) {
+    window.flutter_inappwebview = {
+      registerViewFactory: function(viewId, callback) {
+        window[viewId] = callback;
+      }
+    };
+  }
+</script>
+</body>
+</html>
